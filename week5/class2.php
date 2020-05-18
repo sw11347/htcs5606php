@@ -5,3 +5,5 @@
 
     echo $greeting;
     echo $who;
+
+    echo "<p>".$greeting." ".$who."</p>"; //dot means merge strings.
