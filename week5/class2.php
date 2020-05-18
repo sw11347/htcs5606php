@@ -6,4 +6,9 @@
     echo $greeting;
     echo $who;
 
-    echo "<p>".$greeting." ".$who."</p>"; //dot means merge strings.
+    echo "<h1>".$greeting." ".$who."</h1>"; //dot means merge strings.
+$x = 4;
+$y = 5;
+echo "x =".$x;
+echo "y =".$y;
+echo "z = x + y".($x + $y);
