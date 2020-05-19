@@ -1,5 +1,5 @@
 <?php
-$res = $_POST["mark"];
+$res = $_POST["mark"]; //receive the post request.
 if($res > 100 || $res < 0) {
     echo "Wrong Input";
 }
