@@ -22,7 +22,7 @@ if (isset($_POST["username"])) {
         echo $connection->connect_error;
     } else {
         echo "Connection Created";
-        $sql = "select * username from Users where username = '$username'"; //This is our query
+        $sql = "select * from Users where username = '$username'"; //This is our query
         $result = $connection->query($sql); //run query on this connection through method query()
         if ($result->num_rows == 1) { // means user exists in database
             while ($row = $result->fetch_assoc()) {
