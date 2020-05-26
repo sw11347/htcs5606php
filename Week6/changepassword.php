@@ -10,7 +10,7 @@ if ($connection->connect_error) {
 } else {
     echo "Connection Created";
 }
-$sql = "select password from Users where username = 'something'";
+$sql = "select password from Users where username = '$username'";
 $result = $connection->query($sql);
 if ($result->num_rows == 1){
     while ($row = $result->fetch_assoc()){

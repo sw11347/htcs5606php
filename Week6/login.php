@@ -28,6 +28,8 @@ if (isset($_POST["username"])) {
             while ($row = $result->fetch_assoc()) {
                 if ($row["password"] == $password) {
                     echo "access granted";
+                    session_start();
+                    $_SESSION["username"] = $username;
                 }
                 ?>
                 <p><a href="profile.php"></a>Profile</p>
