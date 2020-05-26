@@ -30,3 +30,4 @@ if (isset($_POST["oldpassword"])) { // isset check if variable exists.
         echo "Go back and retry";
     }
 }
+$connection->close();

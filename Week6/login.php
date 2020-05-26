@@ -31,7 +31,7 @@ if (isset($_POST["username"])) {
                 }
                 ?>
                 <p><a href="profile.php"></a>Profile</p>
-                <p><a href="changepassword.php"></a>Change Password</p>
+                <p><a href="changepasswordform.php"></a>Change Password</p>
                 <?php
             }
         } else {
