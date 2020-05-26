@@ -10,7 +10,7 @@ if (isset($_POST["username"])) {
 
 
     $username = $_POST["username"];
-    $password = $_POST["pwd"];
+    $password = $_POST["passwordd"];
 
     $server = "tj5iv8piornf713y.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
     $user = "tm99sruc6jy9h74t";
@@ -29,10 +29,15 @@ if (isset($_POST["username"])) {
                 if ($row["password"] == $password) {
                     echo "access granted";
                 }
+                ?>
+                <p><a href="profile.php"></a>Profile</p>
+                <p><a href="changepassword.php"></a>Change Password</p>
+                <?php
             }
         } else {
             echo "wrong username";
         }
+        $connection->close(); // close my connection
     }
 } else {
     ?>
