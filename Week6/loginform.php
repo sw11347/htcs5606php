@@ -17,7 +17,7 @@ if (isset($_SESSION["username"])){
     <?php
 } else{
     ?>
-    <form action="login.php" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
     <p>Username <input type="text" name="username" required></p>
     <p>Password <input type="password" name="pwd" required></p>
     <p><input type="submit" value="login"></p>
