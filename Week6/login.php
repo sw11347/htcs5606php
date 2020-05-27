@@ -27,7 +27,7 @@ if (isset($_POST["username"])) {
                 ?>
                 <script>
                     setTimeout(function () {
-                        window.open("loginform.html.", "_self");
+                        window.open("loginform.php.", "_self");
                     }, 3000);
                 </script>
                 <?php
@@ -39,7 +39,7 @@ if (isset($_POST["username"])) {
         ?>
         <script>
             setTimeout(function () {
-                window.open("loginform.html.", "_self");
+                window.open("loginform.php.", "_self");
             }, 3000);
         </script>
         <?php
