@@ -24,12 +24,12 @@ function login($username, $password)
     $connection = dbconn();
 
     $sql = "select * from Users where username = '$username'"; //This is our query
-   echo $sql;
     $result = $connection->query($sql); //run query on this connection through method query()
     if ($result->num_rows == 1) { // means user exists in database
         while ($row = $result->fetch_assoc()) {
             if ($row["password"] == $password) {
                 $connection->close();
+                echo "Username and Password Correct";
                 return true;
             } else {
                 $connection->close();
