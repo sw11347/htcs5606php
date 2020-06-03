@@ -10,8 +10,8 @@ while ($i < sizeof($records)){
     ?>
     <p>
         <?php echo $record->id ?>
-        <?php echo $record->username ?>
-        <?php echo $record->password; ?>
+        <?php// echo $record->username ?>
+        <?php// echo $record->password; ?>
         <?php echo $record->name; ?>
     </p>
     <?php
