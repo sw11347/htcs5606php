@@ -8,6 +8,7 @@
 
 class User
 {
+    //They are my attributes
     public $id;
     private $username;
     private $password;
@@ -26,6 +27,38 @@ class User
         $this->username = $username;
         $this->password = $password;
         $this->name = $name;
+    }
+    // They are my methods
+    /**
+     * @return mixed
+     */
+    public function getUsername()
+    {
+        return $this->username; //This means his
+    }
+
+    /**
+     * @param mixed $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
     }
 
 
