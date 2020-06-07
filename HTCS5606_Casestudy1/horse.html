@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>horse</title>
+    <link rel="stylesheet" href="CSS/index_style.css">
+    <script src="JS/pet_foods_script.js"></script>
+</head>
+<body>
+<div id="header">
+    <img src="IMG/Pet%20Food.png" height="260" width="325"/>
+</div>
+<div id="nav">
+    <a href="index.html">Home</a>
+    <a href="dog.html">Dog Products</a>
+    <a href="cat.html">Cat Products</a>
+    <a href="horse.html">Horse Products</a>
+    <a href="about_us.html">About Us</a>
+</div>
+<div id="main">
+    <table id = "main_table">
+        <tr>
+            <td id="middle_content">
+                <h2>Horse Products</h2>
+
+                <div class="product_div">
+
+                    <img class="product" src="IMG/horsefood.jpg" height="330" width="224"/>
+                    <p>Select Quantity:<input class="quantity" type="number" id="horse_food_quantity"/></p>
+                    <p><button class="add_button" id="add_horse_food" onclick="add_to_cart(this)">Buy</button> </p>
+                </div>
+                <div class="product_div">
+                    <img class="product" src="IMG/horsesaddle.jpg"/>
+                    <p>Select Quantity:<input class="quantity" type="number" id="saddle_quantity"/></p>
+                    <p><button class="add_button" id="add_saddle" onclick="add_to_cart(this)">Buy</button> </p>
+                </div>
+
+
+            </td>
+            <td id="right_content">
+                <p>Cart</p>
+                <div id="cart_div"></div>
+                <p></p>
+                <button id="show_invoice_button">Invoice</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="footer">
+    <hr>
+    <p>Phone: 0800-333-444 Email:<a href="#">PetFood@PetFoodStore.co.nz</a></p>
+    <hr>
+</div>
+</body>
+</html>

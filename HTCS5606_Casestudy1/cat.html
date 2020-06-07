@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cat</title>
+    <link rel="stylesheet" href="CSS/index_style.css">
+    <script src="JS/pet_foods_script.js"></script>
+
+</head>
+<body>
+<div id="header">
+    <img src="IMG/Pet%20Food.png" height="260" width="325"/>
+</div>
+<div id="nav">
+
+    <a href="index.html">Home</a>
+    <a href="dog.html">Dog Products</a>
+    <a href="cat.html">Cat Products</a>
+    <a href="horse.html">Horse Products</a>
+    <a href="about_us.html">About Us</a>
+</div>
+<div id="main">
+    <table id = "main_table">
+        <tr>
+            <td id="middle_content">
+                <h2>Cat Products</h2>
+
+                <div class="product_div">
+                    <img class="product" src="IMG/catfood.jpg" height="484" width="484"/>
+                    <p>$6.50</p>
+                    <p>Select Quantity:<input class="quantity" type="number" id="cat_food_quantity"/></p>
+                    <p><button class="add_button" id="add_cat_food"onclick="add_to_cart(this)">Buy</button> </p>
+                </div>
+                <div class="product_div">
+                    <img class="product" src="IMG/catmeat.jpg" height="500" width="500"/>
+                    <p>$10.00</p>
+                    <p>Select Quantity:<input class="quantity" type="number" id="cat_meat_quantity"/></p>
+                    <p><button class="add_button" id="add_cat_meat" onclick="add_to_cart(this)">Buy</button> </p>
+                </div>
+                <div class="product_div">
+                    <img class="product" src="IMG/pettoypack.jpg" height="822" width="822"/>
+                    <p>$14.99</p>
+                    <p>Select Quantity:<input class="quantity" type="number" id="toys_quantity"/></p>
+                    <p><button class="add_button" id="add_toys" onclick="add_to_cart(this)">Buy</button> </p>
+                </div>
+
+            </td>
+            <td id="right_content">
+                <p>Cart</p>
+                <div id="cart_div"></div>
+                <p></p>
+                <button id="show_invoice_button">Invoice</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="footer">
+    <hr>
+    <p>Phone: 0800-333-444 Email:<a href="#">PetFood@PetFoodStore.co.nz</a></p>
+    <hr>
+</body>
+</html>

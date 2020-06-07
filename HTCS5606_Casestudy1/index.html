@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simon Assessment 1 Home page</title>
+    <link rel="stylesheet" href="CSS/index_style.css">
+    <script src="JS/pet_foods_script.js"></script>
+</head>
+<body onload="move_logo">
+<!--This is the header that holds the logo and logo animation-->
+<div id="header">
+
+    <img id="logo" src="IMG/Pet%20Food.png" height="260" width="325" id="logo"/>
+</div>
+<!--Navigation bar-->
+<div id="nav">
+
+    <a href="index.html">Home</a>
+    <a href="dog.html">Dog Products</a>
+    <a href="cat.html">Cat Products</a>
+    <a href="horse.html">Horse Products</a>
+    <a href="about_us.html">About Us</a>
+
+</div>
+
+<div id="main">
+    <table id = "main_table">
+        <tr>
+            <td id="middle_content">
+    <h2>Welcome to Pet Foods Online Store!</h2>
+            <h2 id="index_product_heading">Popular purchases</h2>
+<!--                Below are all the products and prices-->
+            <div class="product_div">
+                <img class="product" src="IMG/dogfood.png"/>
+                <p>$6.50</p>
+                <p>Select Quantity:<input class="quantity" type="number" id="dog_food_quantity"/></p>
+                <p><button class="add_button" id="add_dog_food" onclick="add_to_cart(this)">Buy</button></p>
+            </div>
+              <div class="product_div">
+                  <img class="product" src="IMG/horsesaddle.jpg"/>
+                  <p>$49.99</p>
+                  <p>Select Quantity:<input class="quantity" type="number" id="saddle_quantity"/></p>
+                  <p><button class="add_button" id="add_saddle" onclick="add_to_cart(this)">Buy</button> </p>
+              </div>
+            <div class="product_div">
+                <img class="product" src="IMG/pettoypack.jpg"/>
+                <p>$14.99</p>
+                <p>Select Quantity:<input class="quantity" type="number" id="toys_quantity"/></p>
+                <p><button class="add_button" id="add_toys" onclick="add_to_cart(this)">Buy</button></p>
+            </div>
+            </td>
+<!--            Add to cart section of the page-->
+            <td id="right_content">
+                <p>Cart</p>
+                <div id="cart_div"></div>
+                <p></p>
+                <button id="show_invoice_button" onclick="invoice()">Invoice</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="invoice_page" class="invoice">
+
+    <!-- Modal content -->
+    <div id="invoice_content">
+        <span class="close">&times;</span>
+        <p>Your invoice</p>
+    </div>
+
+</div>
+
+<!--Footer that contains contact information of Pet Foods-->
+<div id="footer">
+    <hr>
+    <p>Phone: 0800-333-444 Email:<a href="#">PetFood@PetFoodStore.co.nz</a></p>
+    <hr>
+</div>
+</body>
+</html>

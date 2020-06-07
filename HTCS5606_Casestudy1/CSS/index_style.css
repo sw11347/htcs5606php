@@ -1,0 +1,121 @@
+body{
+    background-color: gray;
+}
+
+#header{
+    background-color: lightgreen;
+    position: center;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+.product{
+    height: 400px;
+    width: 300px;
+    margin: 10px;
+}
+#logo {
+    margin: 10px;
+}
+#header img{
+    position: center;
+}
+
+#nav{
+    font-style: italic;
+    font-size: larger;
+    font-family: Bahnschrift;+
+    text-decoration: none;
+    text-align: center;
+    background-color: aliceblue;
+    padding: 20px;
+    text-space: 30px;
+}
+
+#main{
+    text-align: center;
+    background-color: lightgray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: auto;
+
+}
+
+#footer{
+    font-size: medium;
+    text-align: center;
+    background-color: lightgray;
+    padding: 20px;
+}
+
+#nav a{
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#nav a:hover{
+    background-color: lightgray;
+    cursor: grab;
+}
+
+#index_product_heading{
+    padding: 40px;
+    background-color: seagreen;
+
+    margin: 10px;
+}
+
+.popular_products{
+
+    display: inline-block;
+    width: 200px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+.popular_products img{
+    height: 300px;
+    width: 200px;
+}
+input{
+    width: 50px;
+}
+
+#index_product_heading {
+    animation: color-change 3s infinite;
+}
+@keyframes color-change {
+    0% { color: lightgreen; }
+    30% { color: seagreen; }
+    60% { color: darkgreen; }
+    100% { color: lightgreen; }
+}
+#main_table{
+    margin: auto;
+
+}
+#middle_content{
+    width: 80%;
+}
+.about_us
+{
+    font-family: Bahnschrift;
+}
+#main div{
+    display: inline-block;
+}
+#logo{
+    position: relative;
+    animation-name: move_Logo;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes move_Logo {
+    from{ left: 100px}
+    to{ left: 400px}
+}
+#right_content{
+    position: fixed;
+    padding-left: 50px;
+}
