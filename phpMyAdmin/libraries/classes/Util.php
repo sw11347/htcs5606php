@@ -459,7 +459,7 @@ class Util
         /* Check if we have built local documentation, however
          * provide consistent URL for testsuite
          */
-        if (! defined('TESTSUITE') && @file_exists(ROOT_PATH . 'doc/html/index.html')) {
+        if (! defined('TESTSUITE') && @file_exists(ROOT_PATH . 'doc/html/index.php')) {
             return 'doc/html/' . $url;
         }
 
