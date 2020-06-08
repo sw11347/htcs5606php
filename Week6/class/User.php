@@ -6,6 +6,9 @@
  * Purpose: for User
  */
 
+include_once "DB.php";
+include_once "Category.php";
+
 class User
 {
     //They are my attributes
@@ -61,5 +64,19 @@ class User
         $this->password = $password;
     }
 
+    public function view_categories(){
+        $conn = (new DB())->connection; // create connection from DB class
+        $sql = "select * from Category"; // my query
+        $categories = array(); //my categories is an array
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()){
+                $category = new Category($row["id"],$row["name"],$row["picture"]); // each row in table is one category.
+                array_push($categories,$category);
+            }
+        }
+        $conn->close(); //close connection.
+        return $categories;
+    }
 
 }
