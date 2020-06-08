@@ -8,6 +8,7 @@
 
 include_once "DB.php";
 include_once "Category.php";
+include_once "Product.php";
 
 class User
 {
@@ -64,6 +65,10 @@ class User
         $this->password = $password;
     }
 
+    /**
+     * @name: view_categories
+     * @return category array
+     */
     public function view_categories(){
         $conn = (new DB())->connection; // create connection from DB class
         $sql = "select * from Category"; // my query
@@ -79,4 +84,19 @@ class User
         return $categories;
     }
 
+    public function show_products_by_category($categoryID){
+        $conn = (new DB())->connection;
+        $sql = "select * from Product where categoryID=".$categoryID; // . means merge two strings.
+        $products = array();
+        $result = $conn->query($sql);
+        if (num_rows>0){
+            while ($row = $result->fetch_assoc()){
+                $product = new Product($row["id"],$row["name"],$row["price"],
+                    $row["picture"],$row["description"],$row["categoryID"]);
+             array_push($products, $product);
+            }
+        }
+        $conn->close();
+        return $products;
+    }
 }
