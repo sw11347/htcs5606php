@@ -12,7 +12,7 @@ class Product
     public $name;
     public $price;
     public $picture;
-    public $discription;
+    public $description;
     public $categoryID;
 
     /**
