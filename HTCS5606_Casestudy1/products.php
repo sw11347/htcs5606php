@@ -11,6 +11,10 @@
 include_once "header.php";
 ?>
 <div id="main">
+    <?php
+    $categoryID = $_GET["categoryID"];
+    echo $user->show_category_name($categoryID);
+    ?>
     <table id = "main_table">
         <tr>
             <td id="middle_content">
@@ -19,8 +23,7 @@ include_once "header.php";
 
                 <?php
 
-                $categoryID = $_GET["categoryID"];
-                echo $user->show_category_name($categoryID);
+
                 $products = $user->show_products_by_category($categoryID);
                 $i = 0;
                 while ($i<sizeof($products)){
