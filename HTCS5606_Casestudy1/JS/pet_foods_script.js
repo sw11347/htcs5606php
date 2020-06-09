@@ -1,8 +1,9 @@
 function add_to_cart(e) {
     cart = document.getElementById("#right_content");
-    name = e.name;
-    price = e.price;
-    qty = ???;
+    name1 = $(e).attr("name");
+    price = $(e).attr("price");
+    qty = $(e).prev().val();
+    console.log(qty);
 }
 
 
