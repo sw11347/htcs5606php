@@ -12,7 +12,7 @@
     <?php
     include_once "class/User.php";
     $user = new User(null, "", "", "");
-    $categories = $user->viewCategories();
+    $categories = $user->view_categories();
     $i = 0;
     while ($i < sizeof($categories)){
         $category = $categories[$i];
