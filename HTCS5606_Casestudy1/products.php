@@ -16,25 +16,24 @@ include_once "header.php";
             <td id="middle_content">
                 <h2>Dog Products</h2>
 
-                <div class="product_div">
-                    <img class="product" src="IMG/dogfood.png"/>
-                    <p>$6.50</p>
-                    <p>Select Quantity:<input class="quantity" type="number" id="dog_food_quantity"/></p>
-                    <p><button class="add_button" id="add_dog_food" onclick="add_to_cart(this)">Buy</button></p>
-                </div>
-                <div class="product_div">
-                    <img class="product" src="IMG/dogmeat.png" height="512" width="512"/>
-                    <p>$10.00</p>
-                    <p>Select Quantity:<input class="quantity" type="number" id="dog_meat_quantity"/></p>
-                    <p><button class="add_button" id="add_dog_meat" onclick="add_to_cart(this)">Buy</button> </p>
-                </div>
-                <div class="product_div">
-                    <img class="product" src="IMG/pettoypack.jpg" height="822" width="822"/>
-                    <p>14.99</p>
-                    <p>Select Quantity:<input class="quantity" type="number" id="pet_toys_quantity"/></p>
-                    <p><button class="add_button" id="add_toys" onclick="add_to_cart(this)">Buy</button> </p>
-                </div>
 
+                <?php
+                $categoryID = $_GET["categoryID"];
+                $products = $user->show_products_by_category($categoryID);
+                $i = 0;
+                while ($i<sizeof($products)){
+                    $product = $products[$i];
+                    ?>
+                    <div class="product_div">
+                        <img class="product" src="IMG/dogfood.png"/>
+                        <p>$6.50</p>
+                        <p>Select Quantity:<input class="quantity" type="number" id="dog_food_quantity"/></p>
+                        <p><button class="add_button" id="add_dog_food" onclick="add_to_cart(this)">Buy</button></p>
+                    </div>
+                    <?php
+                    $i = $i + 1;
+                }
+                ?>
             </td>
             <td id="right_content">
                 <p>Cart</p>
