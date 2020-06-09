@@ -14,16 +14,19 @@ include_once "header.php";
     <table id = "main_table">
         <tr>
             <td id="middle_content">
-                <h2>Dog Products</h2>
+
 
 
                 <?php
+
                 $categoryID = $_GET["categoryID"];
+                echo $user->show_category_name($categoryID);
                 $products = $user->show_products_by_category($categoryID);
                 $i = 0;
                 while ($i<sizeof($products)){
                     $product = $products[$i];
                     ?>
+
                     <div class="product_div">
                         <img class="product" src="IMG/<?php echo $product->picture; ?>"/>
                         <p> $<?php echo $product->price; ?></p>

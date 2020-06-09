@@ -33,6 +33,7 @@ class User
         $this->name = $name;
     }
     // They are my methods
+
     /**
      * @return mixed
      */
@@ -69,15 +70,16 @@ class User
      * @name: view_categories
      * @return category array
      */
-    public function view_categories(){
+    public function view_categories()
+    {
         $conn = (new DB())->connection; // create connection from DB class
         $sql = "select * from Category"; // my query
         $categories = array(); //my categories is an array
         $result = $conn->query($sql);
-        if ($result->num_rows > 0){
-            while ($row = $result->fetch_assoc()){
-                $category = new Category($row["id"],$row["name"],$row["picture"]); // each row in table is one category.
-                array_push($categories,$category);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $category = new Category($row["id"], $row["name"], $row["picture"]); // each row in table is one category.
+                array_push($categories, $category);
             }
         }
         $conn->close(); //close connection.
@@ -89,18 +91,33 @@ class User
      * @param $categoryID
      * @return product array
      */
-    public function show_products_by_category($categoryID){
+    public function show_products_by_category($categoryID)
+    {
         $conn = (new DB())->connection;
-        $sql = "select * from Product where categoryID=".$categoryID; // . means merge two strings.
+        $sql = "select * from Product where categoryID=" . $categoryID; // . means merge two strings.
         $products = array();
         $result = $conn->query($sql);
-        if ($result->num_rows>0){
-            while ($row = $result->fetch_assoc()){
-                $product = new Product($row["id"],$row["name"],$row["price"],$row["picture"],$row["categoryID"]);
-             array_push($products, $product);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $product = new Product($row["id"], $row["name"], $row["price"], $row["picture"], $row["categoryID"]);
+                array_push($products, $product);
             }
         }
         $conn->close();
         return $products;
+    }
+
+    public function show_category_name($categoryID)
+    {
+        $conn = (new DB())->connection;
+        $sql = "select name from Category where id=".$categoryID;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $name = $row["name"];
+            }
+            $conn->close(); //close connection.
+            return $name;
+        }
     }
 }
