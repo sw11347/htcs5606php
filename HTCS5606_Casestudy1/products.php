@@ -19,8 +19,8 @@ include_once "header.php";
 
                 <?php
                 $categoryID = $_GET["categoryID"];
-                echo $categoryID;
                 $products = $user->show_products_by_category($categoryID);
+                print_r($products);
                 $i = 0;
                 while ($i<sizeof($products)){
                     $product = $products[$i];
