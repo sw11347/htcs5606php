@@ -37,10 +37,8 @@
     <p> We look forward to seeing you soon!</p>
 
 </div>
-<div id="footer">
-    <hr>
-    <p>Phone: 0800-333-444 Email:<a href="#">PetFood@PetFoodStore.co.nz</a></p>
-    <hr>
-</div>
+<?php
+include_once "footer.php";
+?>
 </body>
 </html>
