@@ -13,7 +13,7 @@ include_once "header.php";
 <div id="main">
     <?php
     $categoryID = $_GET["categoryID"];
-    echo $user->show_category_name($categoryID);
+    echo <h1> $user->show_category_name($categoryID);<h1>
     ?>
     <table id = "main_table">
         <tr>
