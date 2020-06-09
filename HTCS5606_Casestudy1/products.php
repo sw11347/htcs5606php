@@ -17,10 +17,10 @@
 include_once "header.php";
 ?>
 <div id="main">
-    <?php
+    <h1> <?php
     $categoryID = $_GET["categoryID"];
-    echo <h1> $user->show_category_name($categoryID);<h1>
-    ?>
+    echo $user->show_category_name($categoryID);
+    ?></h1>
     <table id = "main_table">
         <tr>
             <td id="middle_content">
