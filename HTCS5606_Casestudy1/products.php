@@ -39,8 +39,10 @@ include_once "header.php";
                     <div class="product_div">
                         <img class="product" src="IMG/<?php echo $product->picture; ?>"/>
                         <p> $<?php echo $product->price; ?></p>
-                        <p>Select Quantity:<input class="quantity" type="number" id="dog_food_quantity"/></p>
-                        <p><button class="add_button" id="add_dog_food" onclick="add_to_cart(this)">Buy</button></p>
+                        <p>Select Quantity:<input placeholder="qty" type="number"/></p>
+                        <p><button name="<?php echo $product->name; ?>"
+                                   price="<?php $product->price?>"
+                                   onclick="add_to_cart(this)">Add to cart</button></p>
                     </div>
                     <?php
                     $i = $i + 1;
