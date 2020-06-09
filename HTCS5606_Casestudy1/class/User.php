@@ -96,7 +96,7 @@ class User
         $result = $conn->query($sql);
         if (num_rows>0){
             while ($row = $result->fetch_assoc()){
-                $product = new Product($row["id"],$row["name"],$row["price"],$row["picture"],$row["description"],$row["categoryID"]);
+                $product = new Product($row["id"],$row["name"],$row["price"],$row["picture"],$row["categoryID"]);
              array_push($products, $product);
             }
         }
