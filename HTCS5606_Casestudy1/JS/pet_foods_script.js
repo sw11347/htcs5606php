@@ -4,8 +4,8 @@ function add_to_cart(e) {
     price = $(e).attr("price");
     qty = $(e).prev().val();
 
-    cart.append("<p>Name: "+name1+"  price:"+number(price)*number(qty) +"</p>");
-    total = total +number(price)*number(qty);
+    cart.append("<p>Name: "+name1+"  price:"+Number(price)*Number(qty) +"</p>");
+    total = total +Number(price)*Number(qty);
 }
 
 
