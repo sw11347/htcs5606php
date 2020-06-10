@@ -56,7 +56,7 @@ include_once "header.php";
                 <div id="cart_div"></div>
                 <p>
                 </p>
-                <button id="show_invoice_button">Invoice</button>
+                <button id="show_invoice_button" onclick="invoice()">Invoice</button>
             </td>
         </tr>
     </table>
