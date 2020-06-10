@@ -4,106 +4,62 @@ function add_to_cart(e) {
     price = $(e).attr("price");
     qty = $(e).prev().val();
 
-    cart.append("<p>Name: "+name1+"  price:"+number(price)*number(qty) +"</p>")
+    cart.append("<p>Name: "+name1+"  price:"+number(price)*number(qty) +"</p>");
+    total = total +number(price)*number(qty);
 }
+
 
 
 function invoice() {
 
-    invoice_page = document.getElementById("invoice_page");
+    modal = document.getElementById("myModal");
+    modal.style.display = "block";
 
-    var btn = document.getElementById("show_invoice_button");
-
-
-    var span = document.getElementsByClassName("close")[0];
-
-
-    btn.onclick = function () {
-        cart = document.getElementsByClassName("quantity");
-        invoice_content = document.getElementById("invoice_content");
-        Total = 0;
-        var elems = document.getElementsByClassName("items");
-        i = 0;
-        while (i < elems.length) {
-            elems[i].parentNode.removeChild(elems[i]);
-        }
+    // Get the <span> element that closes the modal
+    cross = document.getElementsByClassName("close")[0];
+    console.log(cross);
 
 
-        i = 0;
-        while (i < cart.length) {
-            console.log(cart[i].id);
-            qty = cart[i].value;
-            switch (cart[i].id) {
-                case "cart_dog_food":
-                    invoice_content.insertAdjacentHTML(
-                        'beforeend',
-                        '<p class = "items">Dog Food: Quantity:' + qty + ' Price:$' + (Number(qty) * 6.5) + '</p>');
-                    Total += (Number(qty) * 6.5);
-                    break;
-                case "cart_saddle":
-                    invoice_content.insertAdjacentHTML(
-                        'beforeend',
-                        '<p class = "items">Saddle: Quantity:' + qty + ' Price:$' + (Number(qty) * 49.99) + '</p>');
-                    Total += (Number(qty) * 49.99);
-                    break;
-                case "cart_toys":
-                    invoice_content.insertAdjacentHTML(
-                        'beforeend',
-                        '<p class = "items">toys: Quantity:' + qty + ' Price:$' + (Number(qty) * 14.99) + '</p>');
-                    Total += (Number(qty) * 14.99);
-                    break;
-                case "cart_dog_meat":
-                    invoice_content.insertAdjacentHTML(
-                        'beforeend',
-                        '<p class = "items">Dog Meat: Quantity:' + qty + ' Price:$' + (Number(qty) * 10) + '</p>');
-                    Total += (Number(qty) * 10);
-                    break;
-                case "cart_cat_food":
-                    invoice_content.insertAdjacentHTML(
-                        'beforeend',
-                        '<p class = "items">Cat Food: Quantity:' + qty + ' Price:$' + (Number(qty) * 6.5) + '</p>');
-                    Total += (Number(qty) * 6.5);
-                    break;
-                case "cart_cat_meat":
-                    invoice_content.insertAdjacentHTML(
-                        'beforeend',
-                        '<p class = "items">Cat Meat: Quantity:' + qty + ' Price:$' + (Number(qty) * 10) + '</p>');
-                    Total += (Number(qty) * 10);
-                    break;
-                default:
-                case "cart_horse_food":
-                    invoice_content.insertAdjacentHTML(
-                        'beforeend',
-                        '<p class = "items">Horse Food: Quantity:' + qty + ' Price:$' + (Number(qty) * 10) + '</p>');
-                    Total += (Number(qty) * 10);
-                    break;
-
-            }
-
-            i++;
-
-        }
-        invoice_content.insertAdjacentHTML(
-            'beforeend',
-            '<p class = "items">Total: $' + Total + '</p>');
-
-        invoice_page.style.display = "block";
-        invoice_content.insertAdjacentHTML(
-            'beforeend',
-            '<p class = "items">Total: $'+ Total+'</p>');
-
-       invoice_page.style.display = "block";
-    };
+    cross.onclick = function () {
+        modal.style.display = "none";
+    }
+}
 
 
-    span.onclick = function() {
-        invoice_page.style.display = "none";
-    };
-
+// When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
-        if (event.target == invoice_page) {
-            invoice_page.style.display = "none";
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+
+    };
+
+    //Take everything from shopping cart
+
+function invoice() {
+    modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    // Get the <span> element that closes the modal
+    cross = document.getElementsByClassName("close")[0];
+    console.log(cross);
+    cross.onclick = function() {
+        modal.style.display = "none";
+    }
+// When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
         }
     }
+    //Take everything from shopping cart
+    $("#invoicePlace").empty();
+    i = 0;
+    while (i < $("#right_content").children().length){
+        // console.log($("#rightDiv").children()[i]);
+        $("#invoicePlace").append($("#right_content").children()[i]);
+        i=i+1;
+    }
+
+    $("#invoicePlace").append("<p>Total: "+total+"</p>");
 
 }

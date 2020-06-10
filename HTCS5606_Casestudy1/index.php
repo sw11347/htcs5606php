@@ -53,12 +53,12 @@ include_once "header.php";
         </tr>
     </table>
 </div>
-<div id="invoice_page" class="invoice">
 
+    <div id="myModal" class="modal">
     <!-- Modal content -->
-    <div id="invoice_content">
+    <div class="modal-content">
         <span class="close">&times;</span>
-        <p>Your invoice</p>
+        <div id = "invoicePlace">Invoice</div>
     </div>
 
 </div>
