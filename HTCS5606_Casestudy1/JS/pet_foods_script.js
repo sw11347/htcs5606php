@@ -1,3 +1,5 @@
+total = 0;
+
 function add_to_cart(e) {
     cart = $("#cart_div");
     name1 = $(e).attr("name");

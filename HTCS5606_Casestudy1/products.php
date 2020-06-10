@@ -39,7 +39,7 @@ include_once "header.php";
                     <div class="product_div">
                         <img class="product" src="IMG/<?php echo $product->picture; ?>"/>
                         <p> $<?php echo $product->price; ?></p>
-                        <p>Select Quantity:<input placeholder="qty" type="number"/></p>
+                       Select Quantity:<input placeholder="qty" type="number"/>
                         <p><button name="<?php echo $product->name; ?>"
                                    price="<?php $product->price?>"
                                    onclick="add_to_cart(this)">Add to cart</button></p>
