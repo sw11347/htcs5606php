@@ -43,7 +43,7 @@ include_once "header.php";
                        Select Quantity:<input placeholder="qty" type="number"/>
                         <br>
                         <button name="<?php echo $product->name; ?>"
-                                   price="<?php echo $product->price?>"
+                                   price="<?php echo $product->price; ?>"
                                    onclick="add_to_cart(this)">Add to cart</button>
                     </div>
                     <?php
