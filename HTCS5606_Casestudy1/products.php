@@ -31,6 +31,7 @@ include_once "header.php";
 
 
                 $products = $user->show_products_by_category($categoryID);
+                print_r($products);
                 $i = 0;
                 while ($i<sizeof($products)){
                     $product = $products[$i];
