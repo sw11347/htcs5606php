@@ -40,9 +40,10 @@ include_once "header.php";
                         <img class="product" src="IMG/<?php echo $product->picture; ?>"/>
                         <p> $<?php echo $product->price; ?></p>
                        Select Quantity:<input placeholder="qty" type="number"/>
-                        <p><button name="<?php echo $product->name; ?>"
+                        <br>
+                        <button name="<?php echo $product->name; ?>"
                                    price="<?php $product->price?>"
-                                   onclick="add_to_cart(this)">Add to cart</button></p>
+                                   onclick="add_to_cart(this)">Add to cart</button>
                     </div>
                     <?php
                     $i = $i + 1;
