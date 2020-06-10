@@ -31,7 +31,7 @@ include_once "header.php";
 
 
                 $products = $user->show_products_by_category($categoryID);
-                print_r($products);
+
                 $i = 0;
                 while ($i<sizeof($products)){
                     $product = $products[$i];
@@ -43,7 +43,7 @@ include_once "header.php";
                        Select Quantity:<input placeholder="qty" type="number"/>
                         <br>
                         <button name="<?php echo $product->name; ?>"
-                                   price="<?php $product->price?>"
+                                   price="<?php echo $product->price?>"
                                    onclick="add_to_cart(this)">Add to cart</button>
                     </div>
                     <?php
