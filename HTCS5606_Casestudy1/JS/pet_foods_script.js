@@ -31,13 +31,7 @@ function invoice() {
     };
     //Take everything from shopping cart
     $("#invoicePlace").empty();
-    i = 0;
-    while (i < $("#right_content").children().length){
-        // console.log($("#rightDiv").children()[i]);
-        $("#invoicePlace").append($("#right_content").children()[i]);
-        i=i+1;
-    }
-
+    $("#invoicePlace").append($("#right_content").children());
     $("#invoicePlace").append("<p>Total: "+total+"</p>");
 
 }
