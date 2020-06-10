@@ -1,5 +1,5 @@
 function add_to_cart(e) {
-    cart = document.getElementById("#cart_div");
+    cart = $("#cart_div");
     name1 = $(e).attr("name");
     price = $(e).attr("price");
     qty = $(e).prev().val();
