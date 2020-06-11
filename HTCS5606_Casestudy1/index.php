@@ -24,24 +24,29 @@ include_once "header.php";
     <h2>Welcome to Pet Foods Online Store!</h2>
             <h2 id="index_product_heading">Popular purchases</h2>
 <!--                Below are all the products and prices-->
-            <div class="product_div">
-                <img class="product" src="IMG/dogfood.png"/>
-                <p>$6.50</p>
-                <p>Select Quantity:<input class="quantity" type="number" id="dog_food_quantity"/></p>
-                <p><button class="add_button" id="add_dog_food" onclick="add_to_cart(this)">Buy</button></p>
-            </div>
-              <div class="product_div">
-                  <img class="product" src="IMG/horsesaddle.jpg"/>
-                  <p>$49.99</p>
-                  <p>Select Quantity:<input class="quantity" type="number" id="saddle_quantity"/></p>
-                  <p><button class="add_button" id="add_saddle" onclick="add_to_cart(this)">Buy</button> </p>
-              </div>
-            <div class="product_div">
-                <img class="product" src="IMG/pettoypack.jpg"/>
-                <p>$14.99</p>
-                <p>Select Quantity:<input class="quantity" type="number" id="toys_quantity"/></p>
-                <p><button class="add_button" id="add_toys" onclick="add_to_cart(this)">Buy</button></p>
-            </div>
+                <?php
+
+
+                $products = $user->show_all_products();
+
+                $i = 0;
+                while ($i<sizeof($products)){
+                    $product = $products[$i];
+                    ?>
+
+                    <div class="product_div">
+                        <img class="product" src="IMG/<?php echo $product->picture; ?>"/>
+                        <p> $<?php echo $product->price; ?></p>
+                        Select Quantity:<input placeholder="qty" type="number"/>
+                        <br>
+                        <button name="<?php echo $product->name; ?>"
+                                price="<?php echo $product->price; ?>"
+                                onclick="add_to_cart(this)">Add to cart</button>
+                    </div>
+                    <?php
+                    $i = $i + 1;
+                }
+                ?>
             </td>
 <!--            Add to cart section of the page-->
             <td id="right_content">

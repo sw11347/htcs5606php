@@ -120,4 +120,18 @@ class User
             return $name;
         }
     }
+    public function show_all_products(){
+        $conn = (new DB())->connection;
+        $sql = "select * from Product"; // . means merge two strings.
+        $products = array();
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $product = new Product($row["id"], $row["name"], $row["price"], $row["picture"], $row["categoryID"]);
+                array_push($products, $product);
+            }
+        }
+        $conn->close();
+        return $products;
+    }
 }

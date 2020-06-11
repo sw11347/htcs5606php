@@ -24,9 +24,6 @@ include_once "header.php";
     <table id = "main_table">
         <tr>
             <td id="middle_content">
-
-
-
                 <?php
 
 
