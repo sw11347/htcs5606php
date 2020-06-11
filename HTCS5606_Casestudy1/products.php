@@ -60,14 +60,15 @@ include_once "header.php";
             </td>
         </tr>
     </table>
-    <div id="myModal" class="modal">
 
-        <!-- Invoice content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id = "invoicePlace">Invoice</div>
-        </div>
 
+    </div>
+<div id="myModal" class="modal">
+
+    <!-- Invoice content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id = "invoicePlace">Invoice</div>
     </div>
 </div>
 <?php
